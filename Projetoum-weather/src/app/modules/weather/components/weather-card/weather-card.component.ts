@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { faDroplet, faTemperatureHigh, faTemperatureLow, faWind } from '@fortawesome/free-solid-svg-icons';
+import { WeatherDatas } from 'src/app/models/interfaces/WeatherDatas';
 
 @Component({
   selector: 'app-weather-card',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: []
 })
 export class WeatherCardComponent {
+  @Input() weatherDatasInput!: WeatherDatas;
 
+  minTemperatureIcon = faTemperatureLow;
+  maxTemperatureIcon = faTemperatureHigh;
+  humidityIcon = faDroplet;
+  windIcon = faWind;
 }
